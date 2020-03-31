@@ -1,0 +1,27 @@
+body {
+    background-color: #4F495E;
+    /* color:#3A2E37
+
+#4F495E
+
+#99959C
+
+#D8CDA0
+
+#966C3E */
+}
+
+.header {
+    text-align: center;
+    color:#fff;
+    margin-bottom: 2em;
+}
+
+.footer {
+    margin-top: 2em;
+    color: #fff;
+}
+
+thead input {
+    width: 100%;
+}

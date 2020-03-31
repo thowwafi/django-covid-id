@@ -1,5 +1,58 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>HAHAHAH</h1>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="example" class="table display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Provinsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data %}
+                    <tr>
+                        <td>
+                            <h5>{{d.provinsi}}</h5>
+                            <span>Positif: {{d.kasusPosi}}</span>
+                            <span>Sembuh: {{d.kasusSemb}}</span>
+                            <span>Meninggal: {{d.kasusMeni}}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example thead tr').clone(true).appendTo( '#example thead' );
+        $('#example thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    
+            $( 'input', this ).on( 'keyup change', function () {
+                if ( table.column(i).search() !== this.value ) {
+                    table
+                        .column(i)
+                        .search( this.value )
+                        .draw();
+                }
+            } );
+        } );
+    
+        var table = $('#example').DataTable( {
+            orderCellsTop: true,
+            fixedHeader: true
+        } );
+    } );
+</script>
 {% endblock content %}

@@ -1,2 +1,3 @@
 /venv
-/static_dirs
+/static_dirs/admin
+/static/admin
