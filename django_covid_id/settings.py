@@ -25,7 +25,7 @@ SECRET_KEY = 'h5wt=a34f^*qoteg%ms=!*2ra6@(ihmluiro97m6ta2s5o8sdv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['thowwafi.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
